@@ -1,0 +1,20 @@
+{
+  "name": "DEAL Realty Hub Coffee",
+  "short_name": "DEAL",
+  "description": "Quán cà phê Tây Hồ mở từ 7 giờ sáng đến 2–5 giờ đêm. Healthy food ban ngày, panini fusion ban đêm.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E2022",
+  "theme_color": "#C9A96E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "lifestyle"],
+  "lang": "vi-VN"
+}

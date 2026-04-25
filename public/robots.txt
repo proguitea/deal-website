@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deal.demonopol.com/sitemap.xml

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install *)",
+      "Bash(uipro init *)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "Bash(npm run *)"
+    ]
+  }
+}

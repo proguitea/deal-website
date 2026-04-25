@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --anthracite: #2B2D2F;
+  --anth-dark: #1E2022;
+  --anth-light: #383A3C;
+  --green: #1A3C2E;
+  --jade: #4F9E6E;
+  --brass: #C9A96E;
+  --brass-dark: #A8854A;
+  --red: #C0392B;
+  --offwhite: #F0EDE8;
+  --cream: #F7F4EF;
+  --cream-dark: #EDE9E2;
+  --ink: #1A1C1E;
+  --ink-mid: #4A4C4E;
+}
+
+/* Respect user motion preference — kills all animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-anthracite text-offwhite font-mono antialiased;
+  }
+
+  .dark body {
+    @apply bg-anthracite text-offwhite;
+  }
+
+  body.light {
+    @apply bg-cream text-ink;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: var(--brass);
+    color: var(--anth-dark);
+  }
+}
+
+@layer components {
+  .logo-text {
+    @apply font-display font-black text-brass tracking-logo;
+  }
+
+  .logo-sub {
+    @apply font-mono text-jade tracking-wide;
+    font-variant: small-caps;
+    font-size: 0.6em;
+    letter-spacing: 0.4em;
+  }
+
+  .section-enter {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .category-header {
+    @apply bg-anth-dark border-l-[3px] border-brass font-display font-bold text-brass px-4 py-2;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+  }
+
+  .category-header-jade {
+    @apply bg-anth-dark border-l-[3px] border-jade font-display font-bold text-jade px-4 py-2;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+  }
+
+  .menu-row-even {
+    @apply bg-anthracite;
+  }
+
+  .menu-row-odd {
+    @apply bg-anth-light;
+  }
+
+  .menu-row-even-light {
+    @apply bg-cream;
+  }
+
+  .menu-row-odd-light {
+    @apply bg-cream-dark;
+  }
+}
+
+@layer utilities {
+  .text-brass {
+    color: var(--brass);
+  }
+
+  .border-brass {
+    border-color: var(--brass);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

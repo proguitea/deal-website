@@ -9,54 +9,120 @@ interface Props {
 }
 
 export function MenuRow({ item, mode = 'dark', alt = false }: Props) {
-  const rowBg =
-    mode === 'dark'
-      ? alt
-        ? 'bg-anth-light'
-        : 'bg-anthracite'
-      : alt
-      ? 'bg-cream-dark'
-      : 'bg-cream';
+  const isDark = mode === 'dark';
 
-  const nameColor = mode === 'dark' ? 'text-offwhite' : 'text-ink';
-  const descColor = mode === 'dark' ? 'text-offwhite/55' : 'text-ink/55';
-  const vnColor = mode === 'dark' ? 'text-offwhite/40' : 'text-ink/40';
+  // Alternating rows: dark odd=#2B2D2F, even=#303234; light odd=#F7F4EF, even=#EDE9E2
+  const rowBg = isDark
+    ? alt ? '#303234' : '#2B2D2F'
+    : alt ? '#EDE9E2' : '#F7F4EF';
+
+  // Image slot: slightly darker than row bg
+  const imgBg = isDark ? '#1A1C1E' : '#D6D2CA';
+
+  const borderRowColor = isDark
+    ? 'rgba(240,237,232,0.08)'
+    : 'rgba(26,28,30,0.08)';
+
+  const imgDashColor = isDark
+    ? 'rgba(201,169,110,0.20)'
+    : 'rgba(26,28,30,0.15)';
+
+  const textColor = isDark ? '#F0EDE8' : '#1A1C1E';
 
   return (
-    <div className={`group flex items-center gap-3 px-4 py-3 border-b border-white/5 border-l-2 border-l-transparent hover:border-l-brass/60 transition-all duration-150 ${rowBg}`}>
-      {/* Image slot */}
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'var(--menu-img-slot, 56px) 1fr auto',
+        minHeight: '60px',
+        borderBottom: `0.5px solid ${borderRowColor}`,
+        background: rowBg,
+      }}
+    >
+      {/* Left cell — image slot */}
       <div
-        className="flex-shrink-0 flex items-center justify-center border border-dashed border-white/20 text-white/20 font-mono"
-        style={{ width: 64, height: 64, fontSize: '9px', borderRadius: '2px' }}
+        style={{
+          background: imgBg,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+        }}
+        aria-hidden="true"
       >
-        IMG
+        <div
+          style={{
+            width: '72%',
+            height: '68%',
+            border: `1px dashed ${imgDashColor}`,
+            borderRadius: '1px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <span
+            className="font-display"
+            style={{ fontSize: '6px', opacity: 0.25, letterSpacing: '0.1em', color: textColor }}
+          >
+            IMG
+          </span>
+        </div>
       </div>
 
-      {/* Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-1.5 flex-wrap">
-          <span className={`font-mono font-semibold ${nameColor}`} style={{ fontSize: '14px' }}>
+      {/* Center cell — info */}
+      <div style={{ padding: '10px 12px', minWidth: 0 }}>
+        <div className="flex items-center gap-1 flex-wrap">
+          <span
+            className="font-mono font-semibold"
+            style={{ fontSize: 'var(--menu-name-size, 13px)', color: textColor }}
+          >
             {item.name}
           </span>
           {item.tag && <Tag label={item.tag} variant={tagVariantFor(item.tag)} />}
         </div>
-        <div className={`font-mono font-light truncate ${vnColor}`} style={{ fontSize: '11px' }}>
+        <div
+          className="font-mono font-light truncate"
+          style={{
+            fontSize: 'var(--menu-sub-size, 10px)',
+            color: textColor,
+            opacity: 0.32,
+          }}
+        >
           {item.nameVn}
         </div>
-        <div className={`font-mono font-light truncate ${descColor}`} style={{ fontSize: '11px' }}>
+        <div
+          className="font-mono font-light truncate"
+          style={{
+            fontSize: 'var(--menu-sub-size, 10px)',
+            color: textColor,
+            opacity: 0.45,
+          }}
+        >
           {item.description}
         </div>
         {item.macro && (
-          <div className="mt-1">
-            <MacroBadge p={item.macro.p} c={item.macro.c} f={item.macro.f} />
-          </div>
+          <MacroBadge p={item.macro.p} c={item.macro.c} f={item.macro.f} />
         )}
       </div>
 
-      {/* Flag + Price */}
-      <div className="flex-shrink-0 flex flex-col items-end gap-1">
-        <span style={{ fontSize: '12px', opacity: 0.7 }}>{item.flag}</span>
-        <span className="font-display font-bold text-brass" style={{ fontSize: '12px' }}>
+      {/* Right cell — flag + price */}
+      <div
+        style={{
+          padding: '10px 12px 10px 8px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}
+      >
+        <span style={{ fontSize: '11px', opacity: 0.65, marginBottom: '4px' }}>
+          {item.flag}
+        </span>
+        <span
+          className="font-display font-bold"
+          style={{ fontSize: '12px', color: '#C9A96E' }}
+        >
           {item.price}
         </span>
       </div>

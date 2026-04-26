@@ -28,14 +28,13 @@ const WORD_CLOUD = [
   { word: 'JUICE', size: 1.2, opacity: 0.38, color: 'text-jade' },
 ];
 
-// Gallery slots
+// Asymmetric gallery: 5 slots, desktop 2fr 1fr 1fr × 240px 240px
 const GALLERY = [
-  { index: '01', label: 'Main Floor', sub: 'Morning light', span: '' },
-  { index: '02', label: 'Art Wall — Tây Hồ', sub: 'Brass on anthracite', span: 'row-span-2', featured: true },
-  { index: '03', label: 'Counter', sub: 'Brass rail', span: '' },
-  { index: '04', label: 'After Midnight', sub: 'Warm lumen', span: '' },
-  { index: '05', label: 'Detail', sub: 'Raw material', span: '' },
-  { index: '06', label: '07:00', sub: 'Before the city wakes', span: '' },
+  { label: 'Art Wall · Tay Ho', featured: true },
+  { label: 'Counter' },
+  { label: 'Night Mode' },
+  { label: 'Interior' },
+  { label: 'Health DEAL' },
 ];
 
 const wordContainer = {
@@ -78,15 +77,15 @@ export function Vibe({ t: _t }: Props) {
           >
             <div className="w-[3px] h-6 bg-brass" />
             <span
-              className="font-mono text-offwhite/30 uppercase"
+              className="font-display font-bold text-brass uppercase"
               style={{ fontSize: '10px', letterSpacing: '0.35em' }}
             >
-              The Space
+              Built different.
             </span>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-            {/* Pull quote — offwhite, not brass */}
+            {/* Pull quote */}
             <motion.blockquote
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -100,15 +99,16 @@ export function Vibe({ t: _t }: Props) {
                 Quiet in the morning.<br />Loud after midnight.
               </p>
               <p className="font-mono text-offwhite/45 mb-6" style={{ fontSize: '13px', lineHeight: 1.9 }}>
-                Dark walls. One brass rail. The kind of place that doesn't need to explain itself.
-                Open before the city wakes. Still running when it goes to sleep.
+                Anthracite walls. Brass details. Warm light after dark.<br />
+                Wabi-Sabi meets industrial precision.<br />
+                A space worth coming back to.
               </p>
               <p className="font-mono text-offwhite/25" style={{ fontSize: '11px', letterSpacing: '0.1em' }}>
                 28/52 Tô Ngọc Vân · Tây Hồ · Hà Nội
               </p>
             </motion.blockquote>
 
-            {/* Right — three honest lines, nothing else */}
+            {/* Right — hours */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -120,7 +120,7 @@ export function Vibe({ t: _t }: Props) {
                 {[
                   { label: 'Mon – Thu', value: '07:00 — 02:00' },
                   { label: 'Fri – Sat',  value: '07:00 — 05:00' },
-                  { label: 'Sunday',     value: 'Closed' },
+                  { label: 'Sunday',     value: '07:00 — 02:00' },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex justify-between items-baseline border-b border-white/6 pb-4">
                     <span className="font-mono text-offwhite/35" style={{ fontSize: '11px', letterSpacing: '0.1em' }}>
@@ -151,51 +151,43 @@ export function Vibe({ t: _t }: Props) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-3"
+            className="vibe-gallery"
           >
-            {GALLERY.map((slot) => (
+            {GALLERY.map((slot, i) => (
               <motion.div
-                key={slot.index}
+                key={slot.label}
                 variants={gridItem}
-                className={`relative group ${slot.span}`}
+                className={`relative group vibe-gallery-slot${slot.featured ? ' vibe-gallery-featured' : ''}`}
               >
-                {/* Placeholder frame */}
                 <div
-                  className="relative w-full border border-white/10 bg-anth-light overflow-hidden group-hover:border-brass/30 transition-colors duration-300"
+                  className="relative w-full h-full group-hover:border-brass/60 transition-colors duration-200"
                   style={{
-                    borderRadius: '2px',
-                    minHeight: slot.featured ? 340 : 170,
+                    background: '#1E2022',
+                    border: '1px dashed rgba(201,169,110,0.20)',
+                    borderRadius: '1px',
                   }}
                 >
+                  {/* Placeholder label */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span
+                      className="font-display text-brass/35"
+                      style={{ fontSize: '7px', letterSpacing: '0.2em', textTransform: 'uppercase' }}
+                      aria-hidden="true"
+                    >
+                      {slot.label}
+                    </span>
+                  </div>
+
                   {/* Corner accent */}
                   <div className="absolute top-0 left-0 w-4 h-px bg-brass/40" />
                   <div className="absolute top-0 left-0 h-4 w-px bg-brass/40" />
 
-                  {/* Placeholder indicator */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span
-                      className="font-mono text-offwhite/10"
-                      style={{ fontSize: '9px', letterSpacing: '0.2em' }}
-                      aria-hidden="true"
-                    >
-                      PHOTO
+                  {/* Index */}
+                  <div className="absolute bottom-2 right-3">
+                    <span className="font-mono text-brass/20" style={{ fontSize: '8px' }}>
+                      {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>
-                </div>
-
-                {/* Gallery label */}
-                <div className="mt-2">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-mono text-brass/50 flex-shrink-0" style={{ fontSize: '9px' }}>
-                      {slot.index}
-                    </span>
-                    <span className="font-mono text-offwhite/60 truncate" style={{ fontSize: '10px', letterSpacing: '0.05em' }}>
-                      {slot.label}
-                    </span>
-                  </div>
-                  <p className="font-mono text-offwhite/25 truncate" style={{ fontSize: '9px', paddingLeft: '1.25rem' }}>
-                    {slot.sub}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -226,15 +218,20 @@ export function Vibe({ t: _t }: Props) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
-          className="flex flex-wrap gap-x-5 gap-y-1 items-baseline"
+          className="word-cloud-wrap flex flex-wrap gap-x-5 gap-y-1 items-baseline"
         >
           {WORD_CLOUD.map(({ word, size, opacity, color }) => (
             <motion.span
               key={word}
               custom={opacity}
               variants={wordItem}
-              className={`font-display font-black ${color}`}
-              style={{ fontSize: `${size}rem`, letterSpacing: '0.04em', lineHeight: 1.15 }}
+              className={`font-display font-black ${color} wc-word`}
+              style={{
+                '--wc-size': `${size}rem`,
+                fontSize: `${size}rem`,
+                letterSpacing: '0.04em',
+                lineHeight: 1.15,
+              } as React.CSSProperties}
             >
               {word}
             </motion.span>

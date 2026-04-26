@@ -4,9 +4,13 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: {
         anthracite: '#2B2D2F',
         'anth-dark': '#1E2022',
+        'anth-mid': '#303234',
         'anth-light': '#383A3C',
         green: '#1A3C2E',
         jade: '#4F9E6E',

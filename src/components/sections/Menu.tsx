@@ -22,22 +22,17 @@ function ExtrasGrid({ t, theme }: { t: Translations; theme: 'dark' | 'light' }) 
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Sweet */}
         <div className="border-r border-white/5">
-          <div
-            className="px-4 py-2 font-display font-bold text-brass border-l-[3px] border-brass bg-anth-dark"
-            style={{ fontSize: '0.65rem', letterSpacing: '0.3em' }}
-          >
-            {t.menu.extras.sweet}
-          </div>
+          <CategoryHeader label={t.menu.extras.sweet} accent="brass" theme={theme} />
           <div className="grid grid-cols-2 gap-px">
             {extrasData.sweet.map((item, i) => (
               <div
                 key={item.id}
-                className={`flex justify-between items-center px-3 py-2 ${i % 2 === 0 ? (theme === 'dark' ? 'bg-anthracite' : 'bg-cream') : (theme === 'dark' ? 'bg-anth-light' : 'bg-cream-dark')}`}
+                className={`flex justify-between items-center px-3 py-2 ${i % 2 === 0 ? (theme === 'dark' ? 'bg-anthracite' : 'bg-cream') : (theme === 'dark' ? 'bg-anth-mid' : 'bg-cream-dark')}`}
               >
                 <span className={`font-mono ${textColor}`} style={{ fontSize: '11px' }}>
                   {item.name}
                 </span>
-                <span className={`font-display font-bold text-brass`} style={{ fontSize: '11px' }}>
+                <span className="font-display font-bold text-brass" style={{ fontSize: '11px' }}>
                   {item.price}
                 </span>
               </div>
@@ -47,22 +42,17 @@ function ExtrasGrid({ t, theme }: { t: Translations; theme: 'dark' | 'light' }) 
 
         {/* Salty */}
         <div>
-          <div
-            className="px-4 py-2 font-display font-bold text-jade border-l-[3px] border-jade bg-anth-dark"
-            style={{ fontSize: '0.65rem', letterSpacing: '0.3em' }}
-          >
-            {t.menu.extras.salty}
-          </div>
+          <CategoryHeader label={t.menu.extras.salty} accent="jade" theme={theme} />
           <div className="grid grid-cols-2 gap-px">
             {extrasData.salty.map((item, i) => (
               <div
                 key={item.id}
-                className={`flex justify-between items-center px-3 py-2 ${i % 2 === 0 ? (theme === 'dark' ? 'bg-anthracite' : 'bg-cream') : (theme === 'dark' ? 'bg-anth-light' : 'bg-cream-dark')}`}
+                className={`flex justify-between items-center px-3 py-2 ${i % 2 === 0 ? (theme === 'dark' ? 'bg-anthracite' : 'bg-cream') : (theme === 'dark' ? 'bg-anth-mid' : 'bg-cream-dark')}`}
               >
                 <span className={`font-mono ${textColor}`} style={{ fontSize: '11px' }}>
                   {item.name}
                 </span>
-                <span className={`font-display font-bold text-jade`} style={{ fontSize: '11px' }}>
+                <span className="font-display font-bold text-jade" style={{ fontSize: '11px' }}>
                   {item.price}
                 </span>
               </div>
@@ -79,7 +69,7 @@ function DrinksGrid({ section, theme }: { section: typeof menuData[2]; theme: 'd
     <div>
       {section.categories.map(cat => (
         <div key={cat.id}>
-          <CategoryHeader label={cat.label} accent="brass" />
+          <CategoryHeader label={cat.label} accent="brass" theme={theme} />
           <div className="grid grid-cols-1 md:grid-cols-2">
             {cat.items.map((item, idx) => (
               <MenuRow key={item.id} item={item} mode={theme} alt={idx % 2 !== 0} />
@@ -94,10 +84,10 @@ function DrinksGrid({ section, theme }: { section: typeof menuData[2]; theme: 'd
 export function Menu({ t, theme }: Props) {
   const [activeTab, setActiveTab] = useState<TabId>('health');
 
-  const tabs: { id: TabId; label: string }[] = [
-    { id: 'health', label: t.menu.tabs.health },
-    { id: 'food', label: t.menu.tabs.food },
-    { id: 'drinks', label: t.menu.tabs.drinks },
+  const tabs: { id: TabId; label: string; shortLabel: string }[] = [
+    { id: 'health', label: t.menu.tabs.health, shortLabel: 'Health' },
+    { id: 'food', label: t.menu.tabs.food, shortLabel: t.menu.tabs.food },
+    { id: 'drinks', label: t.menu.tabs.drinks, shortLabel: t.menu.tabs.drinks },
   ];
 
   const section = menuData.find(s => s.id === activeTab)!;
@@ -118,27 +108,32 @@ export function Menu({ t, theme }: Props) {
       </div>
 
       {/* Tab bar */}
-      <div className={`border-b ${theme === 'dark' ? 'border-white/10 bg-anth-dark' : 'border-ink/10 bg-cream-dark'}`}>
+      <div
+        className={theme === 'dark' ? 'bg-anth-dark' : 'bg-cream-dark'}
+        style={{ borderBottom: '0.5px solid rgba(201,169,110,0.20)', paddingBottom: '2px' }}
+      >
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <div className="flex gap-0">
             {tabs.map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative font-mono px-5 py-3 transition-colors duration-200 ${
+                className={`relative font-mono font-semibold px-5 py-3 transition-colors duration-200 ${
                   activeTab === tab.id
                     ? 'text-brass'
                     : theme === 'dark'
-                    ? 'text-offwhite/50 hover:text-offwhite/80'
-                    : 'text-ink/50 hover:text-ink/80'
+                    ? 'text-offwhite/45 hover:text-offwhite/80'
+                    : 'text-ink/45 hover:text-ink/80'
                 }`}
-                style={{ fontSize: '12px', letterSpacing: '0.05em' }}
+                style={{ fontSize: '11px', letterSpacing: '0.05em' }}
               >
-                {tab.label}
+                <span className="hidden xs:inline">{tab.label}</span>
+                <span className="xs:hidden">{tab.shortLabel}</span>
                 {activeTab === tab.id && (
                   <motion.div
                     layoutId="tab-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-brass"
+                    className="absolute bottom-0 left-0 right-0 bg-brass"
+                    style={{ height: '2px' }}
                     transition={{ duration: 0.2 }}
                   />
                 )}
@@ -166,6 +161,7 @@ export function Menu({ t, theme }: Props) {
                   <CategoryHeader
                     label={cat.label}
                     accent={activeTab === 'health' ? 'jade' : 'brass'}
+                    theme={theme}
                   />
                   {cat.items.map((item, idx) => (
                     <MenuRow key={item.id} item={item} mode={theme} alt={idx % 2 !== 0} />

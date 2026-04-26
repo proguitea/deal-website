@@ -19,6 +19,7 @@ const vi: Translations = {
       line2: 'Nạp năng lượng buổi sáng.',
       line3: 'Làm chủ đêm tối.',
     },
+    subtext: 'Bếp Tây Hồ không bao giờ đóng.\nDinh dưỡng buổi sáng. Panini nửa đêm.',
     cta: 'Xem thực đơn',
   },
   status: {
@@ -31,16 +32,16 @@ const vi: Translations = {
     health: {
       title: 'Health DEAL',
       hours: '07:00 – 13:00',
-      copy: 'Đồ ăn tập gym. Theo dõi macro. Làm mới mỗi ngày. Protein, acai, poke — phù hợp mục tiêu của bạn.',
-      badge: '★ P 32 · C 18 · F 12 g',
+      copy: 'Đồ ăn tập gym. Theo dõi macro.\nAcai, poke, protein, làm mới mỗi ngày.\nDành cho người luyện tập.',
+      badge: '★ P 34 · C 58 · F 16 g — Salmon Poke Bowl',
     },
     late: {
       title: 'DEAL Late',
       hours: '13:00 – Đóng cửa',
-      copy: 'Panini Fusion. Ẩm thực ấm nóng. Mở đến 2 giờ sáng — 5 giờ cuối tuần.',
+      copy: 'Panini Fusion. Nóng và ép.\nCroissant, pasta, wrap.\nVẫn nóng lúc 2 giờ sáng.',
       tag: 'Vẫn nóng lúc 2 giờ sáng.',
     },
-    divider: 'Hai chế độ. Một địa chỉ.',
+    divider: 'Hai menu. Một bếp. Không bao giờ đóng.',
   },
   menu: {
     tabs: {
@@ -65,7 +66,7 @@ const vi: Translations = {
       sun: 'Chủ nhật',
       monThuVal: '07:00 – 02:00',
       friSatVal: '07:00 – 05:00',
-      sunVal: 'Đóng cửa',
+      sunVal: '07:00 – 02:00',
     },
     address: '28/52 Tô Ngọc Vân, Tây Hồ, Hà Nội 10000',
     email: 'realty.hub@demonopol.com',
@@ -79,7 +80,7 @@ const vi: Translations = {
     slots: ['Nội thất', 'Quầy bar', 'Tường nghệ thuật', 'Chế độ đêm', 'Chi tiết', 'Tường nghệ thuật — Tây Hồ'],
   },
   contact: {
-    title: 'Liên hệ',
+    title: 'Ghé quán hoặc liên hệ.',
     email: 'realty.hub@demonopol.com',
     hiring: 'hires@demonopol.com',
     hiringLabel: 'Gia nhập đội ngũ',
@@ -92,7 +93,7 @@ const vi: Translations = {
   footer: {
     location: '28/52 Tô Ngọc Vân · Tây Hồ · Hà Nội',
     slogan: 'Một deal tốt bắt đầu từ một bữa ăn ngon.',
-    hoursShort: 'T2–T5 07–02 · T6–T7 07–05',
+    hoursShort: 'T2–CN 07–02 · T6–T7 07–05',
     copy: '© 2026 DEAL · realty.hub@demonopol.com',
   },
 };

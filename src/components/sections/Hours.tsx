@@ -21,7 +21,7 @@ export function Hours({ t, theme }: Props) {
   const rows = [
     { label: t.hours.table.monThu, value: t.hours.table.monThuVal },
     { label: t.hours.table.friSat, value: t.hours.table.friSatVal },
-    { label: t.hours.table.sun, value: t.hours.table.sunVal, dim: true },
+    { label: t.hours.table.sun, value: t.hours.table.sunVal },
   ];
 
   return (
@@ -46,6 +46,15 @@ export function Hours({ t, theme }: Props) {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.35 }}
           >
+            {/* Blurb */}
+            <p
+              className="font-mono italic mb-6"
+              style={{ fontSize: '12px', color: theme === 'dark' ? 'rgba(240,237,232,0.55)' : 'rgba(26,28,30,0.55)' }}
+            >
+              We close when Tay Ho goes to sleep.<br />
+              That's rarely before 2am.
+            </p>
+
             {/* Live indicator */}
             <div className="flex items-center gap-2 mb-6">
               <span

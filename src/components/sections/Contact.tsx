@@ -37,7 +37,7 @@ export function Contact({ t }: Props) {
             className="font-display font-bold text-brass-dark mb-8"
             style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)', letterSpacing: '0.2em' }}
           >
-            {t.contact.title.toUpperCase()}
+            {t.contact.title}
           </h2>
 
           {/* Email */}

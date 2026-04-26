@@ -74,6 +74,7 @@ export function Nav({ t, lang: _lang, onLangToggle, theme, onThemeToggle }: Prop
           <div className="flex items-center gap-3 ml-2 border-l border-white/10 pl-4">
             <button
               onClick={onLangToggle}
+              aria-label="Toggle language"
               className="font-mono text-offwhite/50 hover:text-brass transition-colors duration-200"
               style={{ fontSize: '11px', letterSpacing: '0.1em' }}
             >

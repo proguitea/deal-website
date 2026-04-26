@@ -7,6 +7,7 @@ import { Concept } from './components/sections/Concept';
 import { Menu } from './components/sections/Menu';
 import { Hours } from './components/sections/Hours';
 import { Vibe } from './components/sections/Vibe';
+import { RealtyHub } from './components/sections/RealtyHub';
 import { Contact } from './components/sections/Contact';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Menu t={t} theme={theme} />
         <Hours t={t} theme={theme} />
         <Vibe t={t} />
+        <RealtyHub />
         <Contact t={t} />
       </main>
       <Footer t={t} />

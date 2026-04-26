@@ -54,9 +54,20 @@ export function Footer({ t }: Props) {
 
       {/* Bottom strip */}
       <div className="border-t border-white/5 px-6 md:px-10 py-3 flex items-center justify-between gap-4">
-        <p className="font-mono text-offwhite/25 shrink-0" style={{ fontSize: '10px' }}>
-          {t.footer.copy}
-        </p>
+        <div className="flex flex-col gap-0.5">
+          <p className="font-mono text-offwhite/25" style={{ fontSize: '10px' }}>
+            {t.footer.copy}
+          </p>
+          <a
+            href="http://demonopol.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-brass/30 hover:text-brass/50 transition-colors duration-200"
+            style={{ fontSize: '10px', textDecoration: 'none' }}
+          >
+            Part of the Demonopol ecosystem
+          </a>
+        </div>
         {/* Subtle Demonopol property line — desktop only, near-invisible */}
         <p
           className="hidden md:block font-mono select-none whitespace-nowrap"

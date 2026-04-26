@@ -10,7 +10,6 @@ function SunriseIcon() {
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16" cy="20" r="6" stroke="#4F9E6E" strokeWidth="1.5" />
       <line x1="16" y1="4" x2="16" y2="8" stroke="#4F9E6E" strokeWidth="1.5" strokeLinecap="square" />
-      <line x1="16" y1="4" x2="16" y2="8" stroke="#4F9E6E" strokeWidth="1.5" />
       <line x1="4" y1="16" x2="8" y2="16" stroke="#4F9E6E" strokeWidth="1.5" strokeLinecap="square" />
       <line x1="24" y1="16" x2="28" y2="16" stroke="#4F9E6E" strokeWidth="1.5" strokeLinecap="square" />
       <line x1="7.5" y1="7.5" x2="10.3" y2="10.3" stroke="#4F9E6E" strokeWidth="1.5" strokeLinecap="square" />
@@ -44,21 +43,20 @@ export function Concept({ t }: Props) {
   return (
     <section id="concept" className="bg-anth-dark py-20 px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
-        {/* Section label */}
+        {/* Eyebrow */}
         <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -8 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.3 }}
-          className="mb-10"
+          className="mb-10 text-center"
         >
           <p
-            className="font-mono text-offwhite/30 uppercase"
-            style={{ fontSize: '10px', letterSpacing: '0.3em' }}
+            className="font-mono italic text-offwhite/50"
+            style={{ fontSize: '13px' }}
           >
             {t.concept.divider}
           </p>
-          <div className="mt-2 w-12 h-px bg-brass/40" />
         </motion.div>
 
         {/* Cards */}
@@ -70,7 +68,7 @@ export function Concept({ t }: Props) {
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="p-8 border border-jade/15 bg-green/10 cursor-default"
+            className="p-8 border border-jade/15 bg-green/10 cursor-default md:min-h-[220px]"
             style={{ borderRadius: '2px' }}
           >
             <div className="mb-4">
@@ -85,12 +83,24 @@ export function Concept({ t }: Props) {
             <p className="font-mono text-jade/60 mb-4" style={{ fontSize: '12px' }}>
               {t.concept.health.hours}
             </p>
-            <p className="font-mono text-offwhite/70 mb-6" style={{ fontSize: '13px', lineHeight: 1.7 }}>
+            <p
+              className="font-mono text-offwhite/70 mb-4"
+              style={{ fontSize: '13px', lineHeight: 1.7, whiteSpace: 'pre-line' }}
+            >
               {t.concept.health.copy}
             </p>
             <span
-              className="inline-flex items-center px-3 py-1.5 font-mono font-semibold text-jade border border-jade/30 bg-jade/10"
-              style={{ fontSize: '11px', borderRadius: '2px' }}
+              className="font-mono font-semibold"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                padding: '2px 8px',
+                fontSize: '9px',
+                background: 'rgba(79,158,110,0.12)',
+                border: '0.5px solid rgba(79,158,110,0.35)',
+                color: '#4F9E6E',
+                borderRadius: '2px',
+              }}
             >
               {t.concept.health.badge}
             </span>
@@ -107,7 +117,7 @@ export function Concept({ t }: Props) {
             viewport={{ once: true, margin: '-60px' }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             transition={{ delay: 0.1 }}
-            className="p-8 border border-brass/15 bg-brass/5 cursor-default"
+            className="p-8 border border-brass/15 bg-brass/5 cursor-default md:min-h-[220px]"
             style={{ borderRadius: '2px' }}
           >
             <div className="mb-4">
@@ -122,7 +132,10 @@ export function Concept({ t }: Props) {
             <p className="font-mono text-brass/60 mb-4" style={{ fontSize: '12px' }}>
               {t.concept.late.hours}
             </p>
-            <p className="font-mono text-offwhite/70 mb-6" style={{ fontSize: '13px', lineHeight: 1.7 }}>
+            <p
+              className="font-mono text-offwhite/70 mb-6"
+              style={{ fontSize: '13px', lineHeight: 1.7, whiteSpace: 'pre-line' }}
+            >
               {t.concept.late.copy}
             </p>
             <span

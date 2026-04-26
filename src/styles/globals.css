@@ -119,3 +119,57 @@
     display: none;
   }
 }
+
+/* ── Gallery grid ─────────────────────────────── */
+.vibe-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.vibe-gallery-slot {
+  min-height: 180px;
+}
+
+@media (min-width: 768px) {
+  .vibe-gallery {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 240px 240px;
+  }
+
+  .vibe-gallery-slot {
+    min-height: unset;
+  }
+
+  .vibe-gallery-featured {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+
+/* ── Menu row responsive CSS properties ───────── */
+:root {
+  --menu-img-slot: 56px;
+  --menu-name-size: 13px;
+  --menu-sub-size: 10px;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --menu-img-slot: 44px;
+    --menu-name-size: 12px;
+    --menu-sub-size: 9px;
+  }
+}
+
+/* ── Word cloud mobile scaling ────────────────── */
+@media (max-width: 480px) {
+  .word-cloud-wrap {
+    gap-x: 12px;
+    gap-y: 0;
+  }
+
+  .wc-word {
+    font-size: calc(var(--wc-size) * 0.6) !important;
+  }
+}

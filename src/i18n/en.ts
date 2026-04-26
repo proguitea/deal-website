@@ -17,6 +17,7 @@ const en = {
       line2: 'Fuel the morning.',
       line3: 'Own the night.',
     },
+    subtext: "Tay Ho's kitchen that doesn't close.\nHealth food in the morning. Panini at midnight.",
     cta: 'View Menu',
   },
   status: {
@@ -29,16 +30,16 @@ const en = {
     health: {
       title: 'Health DEAL',
       hours: '07:00 – 13:00',
-      copy: 'Protein shakes, acai bowls, poke. Macros on every dish. Made this morning. If you train in Tây Hồ, this is breakfast.',
-      badge: '★ P 32 · C 18 · F 12 g',
+      copy: 'Gym fuel. Macro-tracked.\nAcai, poke, protein, fresh daily.\nMade for people who train.',
+      badge: '★ P 34 · C 58 · F 16 g — Salmon Poke Bowl',
     },
     late: {
       title: 'DEAL Late',
       hours: '13:00 – Close',
-      copy: 'Panini fusion off the press. Hot pasta, croissants, real food. Open until 2am — 5am Friday and Saturday. Tây Hồ\'s last kitchen standing.',
+      copy: 'Panini Fusion. Hot and pressed.\nCroissants, pasta, wraps.\nStill hot at 2am.',
       tag: 'Still hot at 2am.',
     },
-    divider: 'Two modes. One address.',
+    divider: 'Two menus. One kitchen. No closing time.',
   },
   menu: {
     tabs: {
@@ -63,7 +64,7 @@ const en = {
       sun: 'Sunday',
       monThuVal: '07:00 – 02:00',
       friSatVal: '07:00 – 05:00',
-      sunVal: 'Closed',
+      sunVal: '07:00 – 02:00',
     },
     address: '28/52 Tô Ngọc Vân, Tây Hồ, Hà Nội 10000',
     email: 'realty.hub@demonopol.com',
@@ -77,7 +78,7 @@ const en = {
     slots: ['Main Floor', 'Counter', 'Art Wall', 'After Midnight', 'Detail', 'Art Wall — Tây Hồ'],
   },
   contact: {
-    title: 'Contact',
+    title: 'Come in or reach out.',
     email: 'realty.hub@demonopol.com',
     hiring: 'hires@demonopol.com',
     hiringLabel: 'Work here',
@@ -90,7 +91,7 @@ const en = {
   footer: {
     location: '28/52 Tô Ngọc Vân · Tây Hồ · Hà Nội',
     slogan: 'A good deal starts with a good meal.',
-    hoursShort: 'Mon–Thu 07–02 · Fri–Sat 07–05',
+    hoursShort: 'Mon–Sun 07–02 · Fri–Sat 07–05',
     copy: '© 2026 DEAL · realty.hub@demonopol.com',
   },
 };

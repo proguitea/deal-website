@@ -7,8 +7,19 @@ interface Props {
 export function MacroBadge({ p, c, f }: Props) {
   return (
     <span
-      className="inline-flex items-center px-2 py-0.5 font-mono font-semibold text-jade border border-jade/30 bg-jade/10"
-      style={{ fontSize: '10px', borderRadius: '2px' }}
+      className="font-mono font-semibold"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        padding: '2px 8px',
+        fontSize: '9px',
+        whiteSpace: 'nowrap',
+        background: 'rgba(79,158,110,0.12)',
+        border: '0.5px solid rgba(79,158,110,0.35)',
+        color: '#4F9E6E',
+        borderRadius: '2px',
+        marginTop: '4px',
+      }}
     >
       ★ P {p} · C {c} · F {f} g
     </span>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deal.demonopol.com/sitemap.xml
+Sitemap: https://deal-website-two.vercel.app/sitemap.xml

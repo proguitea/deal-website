@@ -30,11 +30,11 @@ const WORD_CLOUD = [
 
 // Asymmetric gallery: 5 slots, desktop 2fr 1fr 1fr × 240px 240px
 const GALLERY = [
-  { label: 'Art Wall · Tay Ho', featured: true },
-  { label: 'Counter' },
-  { label: 'Night Mode' },
-  { label: 'Interior' },
-  { label: 'Health DEAL' },
+  { label: 'Art Wall · Tay Ho', featured: true,  src: '/interior-artwall.jpg',    pos: 'center' },
+  { label: 'Counter',                             src: '/counter-main.jpg',        pos: 'center top' },
+  { label: 'Night Mode',                          src: '/interior-entrance.jpg',   pos: 'center' },
+  { label: 'Interior',                            src: '/interior-plants.jpg',     pos: 'center' },
+  { label: 'Health DEAL',                         src: '/interior-frontal.jpg',    pos: 'center' },
 ];
 
 const wordContainer = {
@@ -160,31 +160,36 @@ export function Vibe({ t: _t }: Props) {
                 className={`relative group vibe-gallery-slot${slot.featured ? ' vibe-gallery-featured' : ''}`}
               >
                 <div
-                  className="relative w-full h-full group-hover:border-brass/60 transition-colors duration-200"
-                  style={{
-                    background: '#1E2022',
-                    border: '1px dashed rgba(201,169,110,0.20)',
-                    borderRadius: '1px',
-                  }}
+                  className="relative w-full h-full overflow-hidden"
+                  style={{ borderRadius: '1px' }}
                 >
-                  {/* Placeholder label */}
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  {/* Photo */}
+                  <img
+                    src={slot.src}
+                    alt={slot.label}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: slot.pos }}
+                  />
+
+                  {/* Subtle dark scrim */}
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(to top, rgba(17,19,20,0.55) 0%, transparent 50%)' }}
+                  />
+
+                  {/* Label */}
+                  <div className="absolute bottom-3 left-3">
                     <span
-                      className="font-display text-brass/35"
-                      style={{ fontSize: '7px', letterSpacing: '0.2em', textTransform: 'uppercase' }}
-                      aria-hidden="true"
+                      className="font-mono text-offwhite/60"
+                      style={{ fontSize: '8px', letterSpacing: '0.2em', textTransform: 'uppercase' }}
                     >
                       {slot.label}
                     </span>
                   </div>
 
-                  {/* Corner accent */}
-                  <div className="absolute top-0 left-0 w-4 h-px bg-brass/40" />
-                  <div className="absolute top-0 left-0 h-4 w-px bg-brass/40" />
-
                   {/* Index */}
-                  <div className="absolute bottom-2 right-3">
-                    <span className="font-mono text-brass/20" style={{ fontSize: '8px' }}>
+                  <div className="absolute top-2 right-3">
+                    <span className="font-mono text-offwhite/20" style={{ fontSize: '8px' }}>
                       {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>

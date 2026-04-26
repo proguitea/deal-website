@@ -105,6 +105,27 @@ export function Hero({ t }: Props) {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-anthracite"
     >
+      {/* Background photo */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/interior-frontal.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.18,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Dark gradient over photo — left stays dark for text, right reveals image */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(105deg, rgba(17,19,20,0.95) 0%, rgba(17,19,20,0.80) 50%, rgba(17,19,20,0.55) 100%)',
+        }}
+        aria-hidden="true"
+      />
+
       {/* Dot grid texture */}
       <div
         className="absolute inset-0 pointer-events-none"

@@ -79,13 +79,13 @@ export function Hours({ t, theme }: Props) {
                   }`}
                 >
                   <span
-                    className={`font-mono ${row.dim ? textMuted : textPrimary}`}
+                    className={`font-mono ${textPrimary}`}
                     style={{ fontSize: '13px' }}
                   >
                     {row.label}
                   </span>
                   <span
-                    className={`font-mono font-semibold ${row.dim ? textMuted : 'text-brass'}`}
+                    className="font-mono font-semibold text-brass"
                     style={{ fontSize: '13px' }}
                   >
                     {row.value}

@@ -146,6 +146,18 @@ export function Concept({ t }: Props) {
             </span>
           </motion.div>
         </div>
+
+        {/* Micro-hint — discovery line, not a nav target */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="font-mono italic text-brass text-center mt-10"
+          style={{ fontSize: '11px', opacity: 0.5, letterSpacing: '2px' }}
+        >
+          A café is just the beginning.
+        </motion.p>
       </div>
     </section>
   );

@@ -37,7 +37,7 @@ const GALLERY = [
   { label: 'The Counter',                        src: '/counter-slogan.jpg',        pos: 'center top' },
   { label: 'Entrance',                           src: '/entrance-lounge.jpg',       pos: 'center' },
   { label: 'Interior',                           src: '/interior-wide.jpg',         pos: 'center' },
-  { label: 'The Facade',                         src: '/exterior-facade.jpg',       pos: 'center top' },
+  { label: 'The Nook',                           src: '/corner-nook.jpg',           pos: 'center' },
 ];
 
 const wordContainer = {

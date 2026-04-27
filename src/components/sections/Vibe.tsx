@@ -33,11 +33,11 @@ const WORD_CLOUD = [
 
 // Asymmetric gallery: 5 slots, desktop 2fr 1fr 1fr × 240px 240px
 const GALLERY = [
-  { label: 'DEAL · Realty Hub Coffee', featured: true,  src: '/exterior-facade.jpg',      pos: 'center top' },
-  { label: 'The Counter',                               src: '/counter-slogan.jpg',        pos: 'center top' },
-  { label: 'Entrance',                                  src: '/entrance-lounge.jpg',       pos: 'center' },
-  { label: 'Interior',                                  src: '/interior-wide.jpg',         pos: 'center' },
-  { label: 'The Space',                                 src: '/interior-aerial.jpg',       pos: 'center top' },
+  { label: 'Art Wall · Tay Ho', featured: true,  src: '/brand-wall.jpg',           pos: 'center' },
+  { label: 'The Counter',                        src: '/counter-slogan.jpg',        pos: 'center top' },
+  { label: 'Entrance',                           src: '/entrance-lounge.jpg',       pos: 'center' },
+  { label: 'Interior',                           src: '/interior-wide.jpg',         pos: 'center' },
+  { label: 'The Facade',                         src: '/exterior-facade.jpg',       pos: 'center top' },
 ];
 
 const wordContainer = {

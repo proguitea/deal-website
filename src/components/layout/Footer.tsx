@@ -1,3 +1,4 @@
+import { Logo } from '../ui/Logo';
 import type { Translations } from '../../i18n/en';
 
 interface Props {
@@ -9,20 +10,9 @@ export function Footer({ t }: Props) {
     <footer className="bg-anth-dark border-t-2 border-brass">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo + location */}
-        <div className="flex flex-col gap-2">
-          <span
-            className="font-display font-black text-brass"
-            style={{ fontSize: '1.1rem', letterSpacing: '0.3em' }}
-          >
-            DEAL
-          </span>
-          <span
-            className="font-mono text-jade"
-            style={{ fontSize: '0.5rem', letterSpacing: '0.4em', fontVariant: 'small-caps' }}
-          >
-            REALTY HUB COFFEE
-          </span>
-          <p className="font-mono text-offwhite/50 mt-1" style={{ fontSize: '11px' }}>
+        <div className="flex flex-col gap-3">
+          <Logo size="lg" />
+          <p className="font-mono text-offwhite/50" style={{ fontSize: '11px' }}>
             {t.footer.location}
           </p>
         </div>

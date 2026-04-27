@@ -2,6 +2,24 @@ import type { MenuItem } from '../../data/menuData';
 import { MacroBadge } from './MacroBadge';
 import { Tag, tagVariantFor } from './Tag';
 
+function itemEmoji(id: string): string {
+  if (/acai|poke|bowl|salad|caesar/.test(id)) return '🥗';
+  if (/shake|smoothie/.test(id)) return '🥤';
+  if (/coffee|espresso|latte|ca-phe/.test(id)) return '☕';
+  if (/oat|granola|yogurt|parfait|chia|pudding/.test(id)) return '🫙';
+  if (/egg/.test(id)) return '🥚';
+  if (/brownie|muffin|cake|baked/.test(id)) return '🍰';
+  if (/croissant/.test(id)) return '🥐';
+  if (/panini|sandwich|toast/.test(id)) return '🥪';
+  if (/wrap/.test(id)) return '🌯';
+  if (/pasta|spaghetti/.test(id)) return '🍝';
+  if (/pizza/.test(id)) return '🍕';
+  if (/juice|ep/.test(id)) return '🍹';
+  if (/salmon|tuna|fish/.test(id)) return '🐟';
+  if (/chicken/.test(id)) return '🍗';
+  return '🍽';
+}
+
 interface Props {
   item: MenuItem;
   mode?: 'dark' | 'light';
@@ -33,8 +51,8 @@ export function MenuRow({ item, mode = 'dark', alt = false }: Props) {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: 'var(--menu-img-slot, 56px) 1fr auto',
-        minHeight: '60px',
+        gridTemplateColumns: 'var(--menu-img-slot, 72px) 1fr auto',
+        minHeight: '72px',
         borderBottom: `0.5px solid ${borderRowColor}`,
         background: rowBg,
       }}
@@ -47,27 +65,21 @@ export function MenuRow({ item, mode = 'dark', alt = false }: Props) {
           alignItems: 'center',
           justifyContent: 'center',
           flexShrink: 0,
+          minHeight: '72px',
         }}
         aria-hidden="true"
       >
-        <div
-          style={{
-            width: '72%',
-            height: '68%',
-            border: `1px dashed ${imgDashColor}`,
-            borderRadius: '1px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <span
-            className="font-display"
-            style={{ fontSize: '6px', opacity: 0.25, letterSpacing: '0.1em', color: textColor }}
-          >
-            IMG
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={item.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        ) : (
+          <span style={{ fontSize: '22px', opacity: 0.55, lineHeight: 1 }}>
+            {itemEmoji(item.id)}
           </span>
-        </div>
+        )}
       </div>
 
       {/* Center cell — info */}

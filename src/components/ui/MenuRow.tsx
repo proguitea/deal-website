@@ -41,10 +41,6 @@ export function MenuRow({ item, mode = 'dark', alt = false }: Props) {
     ? 'rgba(240,237,232,0.08)'
     : 'rgba(26,28,30,0.08)';
 
-  const imgDashColor = isDark
-    ? 'rgba(201,169,110,0.20)'
-    : 'rgba(26,28,30,0.15)';
-
   const textColor = isDark ? '#F0EDE8' : '#1A1C1E';
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { useScrollY } from '../../hooks/useScrollProgress';
+import { Logo } from '../ui/Logo';
 import type { Translations } from '../../i18n/en';
 import type { Lang } from '../../hooks/useLanguage';
 import type { Theme } from '../../hooks/useTheme';
@@ -42,19 +43,8 @@ export function Nav({ t, lang: _lang, onLangToggle, theme, onThemeToggle }: Prop
         }`}
       >
         {/* Logo */}
-        <a href="#" className="flex flex-col leading-none group">
-          <span
-            className="font-display font-black text-brass"
-            style={{ fontSize: '1.15rem', letterSpacing: '0.3em' }}
-          >
-            DEAL
-          </span>
-          <span
-            className="font-mono text-jade"
-            style={{ fontSize: '0.45rem', letterSpacing: '0.4em', fontVariant: 'small-caps' }}
-          >
-            REALTY HUB COFFEE
-          </span>
+        <a href="#" aria-label="DEAL Realty Hub Coffee — home">
+          <Logo size="sm" />
         </a>
 
         {/* Desktop links */}

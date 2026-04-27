@@ -109,7 +109,7 @@ export function Hero({ t }: Props) {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: 'url(/interior-frontal.jpg)',
+          backgroundImage: 'url(/interior-main.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.18,

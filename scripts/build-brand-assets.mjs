@@ -48,6 +48,10 @@ const renders = [
   { svg: 'hero-landscape-1920x1080.svg', sizes: [1920] },        // 16:9
   { svg: 'hero-square-1080x1080.svg',    sizes: [1080, 2160] },  // IG feed (1080) + retina (2160)
   { svg: 'hero-story-1080x1920.svg',     sizes: [1080] },        // 9:16 IG story / TikTok cover
+
+  // Roman-numeral year stamps — corner watermarks, anniversary posts, stickers
+  { svg: 'year-stamp-mmxxvi.svg', sizes: [400, 800, 1600] },
+  { svg: 'est-line-1600x120.svg', sizes: [1600] },
 ];
 
 // Decide which font to use for a given font-family attribute string.

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <!-- D.E.A.L est. MMXXVI year stamp — square -->
+  <!-- Use as: corner watermark, anniversary post, sticker, embroidery -->
+
+  <rect width="800" height="800" fill="#1E2022"/>
+
+  <!-- Outer thin frame -->
+  <rect x="60" y="60" width="680" height="680"
+    fill="none"
+    stroke="#C9A96E"
+    stroke-width="1.5"
+    opacity="0.45"/>
+
+  <!-- Inner double-rule frame for depth -->
+  <rect x="80" y="80" width="640" height="640"
+    fill="none"
+    stroke="#C9A96E"
+    stroke-width="0.5"
+    opacity="0.25"/>
+
+  <!-- Tri-band accent — top center -->
+  <rect x="350" y="160" width="100" height="2" rx="1" fill="#D44332"/>
+  <rect x="350" y="164" width="100" height="6" rx="1" fill="#4F9E6E"/>
+  <rect x="350" y="172" width="100" height="2" rx="1" fill="#D44332"/>
+
+  <!-- "EST." -->
+  <text x="400" y="265"
+    text-anchor="middle"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="22"
+    letter-spacing="14"
+    fill="#C9A96E"
+    opacity="0.7">EST.</text>
+
+  <!-- MMXXVI — the headline -->
+  <text x="400" y="450"
+    text-anchor="middle"
+    font-family="'Orbitron', monospace"
+    font-weight="900"
+    font-size="140"
+    letter-spacing="14"
+    fill="#C9A96E">MMXXVI</text>
+
+  <!-- Thin separator below year -->
+  <rect x="280" y="495" width="240" height="1" fill="#C9A96E" opacity="0.4"/>
+
+  <!-- Location line -->
+  <text x="400" y="555"
+    text-anchor="middle"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="18"
+    letter-spacing="10"
+    fill="#4F9E6E"
+    opacity="0.85">TÂY HỒ  ·  HÀ NỘI</text>
+
+  <!-- Bottom: Realty Hub Coffee -->
+  <text x="400" y="630"
+    text-anchor="middle"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="7"
+    fill="#F0EDE8"
+    opacity="0.30">D.E.A.L  ·  REALTY HUB COFFEE</text>
+</svg>

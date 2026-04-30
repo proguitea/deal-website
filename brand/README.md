@@ -17,6 +17,8 @@ Logo files for marketing, social media, presentations, and designer hand-off.
 | Twitter/X header, FB cover, presentation slide | `png/hero-landscape-1920x1080-1920.png` |
 | Instagram feed post (full hero composition) | `png/hero-square-1080x1080-1080.png` (or `-2160` for retina) |
 | Instagram Story, TikTok cover, phone wallpaper | `png/hero-story-1080x1920-1080.png` |
+| Anniversary post / corner watermark / sticker | `png/year-stamp-mmxxvi-800.png` |
+| Email signature banner / business card line | `png/est-line-1600x120-1600.png` |
 
 ## Brand colors
 
@@ -43,6 +45,8 @@ Logo files for marketing, social media, presentations, and designer hand-off.
 - `hero-landscape-1920x1080.svg` — full hero composition, 16:9 landscape
 - `hero-square-1080x1080.svg` — hero composition cropped to square (1:1)
 - `hero-story-1080x1920.svg` — hero composition for Instagram Story / TikTok cover (9:16)
+- `year-stamp-mmxxvi.svg` — square Roman-numeral establishment stamp (800×800, framed)
+- `est-line-1600x120.svg` — horizontal "Est. MMXXVI · Tây Hồ · Hà Nội" banner
 
 ### Raster (PNG)
 
@@ -55,6 +59,8 @@ In `png/`. Generated from the SVGs at standard sizes.
 - Hero landscape: 1920 px (native, 16:9)
 - Hero square: 1080 + 2160 px (1:1 — IG retina)
 - Hero story: 1080 px (native, 9:16)
+- Year stamp: 400, 800, 1600 px (square)
+- Est-line: 1600 px (native, ~13:1 banner)
 
 ## Re-generating PNGs
 

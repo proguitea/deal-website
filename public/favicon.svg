@@ -8,7 +8,8 @@
        M32 26 L48 26 Q70 26 70 50 Q70 74 48 74 L32 74 Z"
     fill="#C9A96E"/>
 
-  <!-- Jade accent bar — horizontal center of inner counter -->
-  <!-- Encodes the dual identity: health morning / late night -->
-  <rect x="32" y="46" width="38" height="8" rx="1" fill="#4F9E6E"/>
+  <!-- Tri-band accent — jade (dual identity) framed by two thin red strokes (urgency / spice / late) -->
+  <rect x="32" y="44.5" width="38" height="1.5" rx="1" fill="#D44332"/>
+  <rect x="32" y="46"   width="38" height="8"   rx="1" fill="#4F9E6E"/>
+  <rect x="32" y="54"   width="38" height="1.5" rx="1" fill="#D44332"/>
 </svg>

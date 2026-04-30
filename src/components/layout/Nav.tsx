@@ -43,7 +43,7 @@ export function Nav({ t, lang: _lang, onLangToggle, theme, onThemeToggle }: Prop
         }`}
       >
         {/* Logo */}
-        <a href="#" aria-label="DEAL Realty Hub Coffee — home">
+        <a href="#" aria-label="D.E.A.L Realty Hub Coffee — home">
           <Logo size="sm" />
         </a>
 

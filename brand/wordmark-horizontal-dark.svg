@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80">
-  <!-- Full horizontal wordmark for D.E.A.L Realty Hub Coffee -->
-  <!-- Use on dark backgrounds -->
+  <!-- D.E.A.L Realty Hub Coffee — full horizontal wordmark on dark surface -->
+  <!-- Brand colors: brass #C9A96E · jade #4F9E6E · red #D44332 · anth-dark #1E2022 -->
+
+  <rect width="360" height="80" fill="#1E2022"/>
 
   <!-- D Mark icon -->
   <rect x="0" y="4" width="72" height="72" rx="10" fill="#1E2022"/>

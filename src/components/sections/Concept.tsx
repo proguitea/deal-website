@@ -61,7 +61,7 @@ export function Concept({ t }: Props) {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-0">
-          {/* Health DEAL card */}
+          {/* Health D.E.A.L card */}
           <motion.div
             variants={cardVariant}
             initial="hidden"
@@ -109,7 +109,7 @@ export function Concept({ t }: Props) {
           {/* Vertical divider */}
           <div className="hidden md:block self-stretch bg-brass/20 mx-6" />
 
-          {/* DEAL Late card */}
+          {/* D.E.A.L Late card */}
           <motion.div
             variants={cardVariant}
             initial="hidden"

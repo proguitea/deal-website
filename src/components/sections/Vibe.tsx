@@ -6,7 +6,7 @@ interface Props {
 }
 
 const WORD_CLOUD = [
-  { word: 'DEAL', size: 3.2, opacity: 0.85, color: 'text-brass' },
+  { word: 'D.E.A.L', size: 3.2, opacity: 0.85, color: 'text-brass' },
   { word: 'OPEN', size: 2.4, opacity: 0.8, color: 'text-brass' },
   { word: 'LATE', size: 2.8, opacity: 0.85, color: 'text-brass' },
   { word: 'HANOI', size: 1.9, opacity: 0.7, color: 'text-brass' },

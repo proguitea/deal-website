@@ -27,7 +27,7 @@ export function Footer({ t }: Props) {
           </p>
         </div>
 
-        {/* Hours + email */}
+        {/* Hours + email + brand kit */}
         <div className="flex flex-col gap-2 md:items-end">
           <p className="font-mono text-offwhite/50" style={{ fontSize: '11px' }}>
             {t.footer.hoursShort}
@@ -38,6 +38,15 @@ export function Footer({ t }: Props) {
             style={{ fontSize: '11px' }}
           >
             realty.hub@demonopol.com
+          </a>
+          <a
+            href="/brand-kit.zip"
+            download
+            title={t.footer.brandKitTitle}
+            className="font-mono text-brass/40 hover:text-brass transition-colors duration-200"
+            style={{ fontSize: '11px' }}
+          >
+            {t.footer.brandKit}
           </a>
         </div>
       </div>

@@ -21,20 +21,20 @@ const en = {
     cta: 'View Menu',
   },
   status: {
-    health: 'Health DEAL · Open',
-    deal: 'DEAL · Open Now',
+    health: 'Health D.E.A.L · Open',
+    deal: 'D.E.A.L · Open Now',
     late: 'Still open · Until 5am',
     closed: 'Opens at 07:00',
   },
   concept: {
     health: {
-      title: 'Health DEAL',
+      title: 'Health D.E.A.L',
       hours: '07:00 – 13:00',
       copy: 'Gym fuel. Macro-tracked.\nAcai, poke, protein, fresh daily.\nMade for people who train.',
       badge: '★ P 34 · C 58 · F 16 g — Salmon Poke Bowl',
     },
     late: {
-      title: 'DEAL Late',
+      title: 'D.E.A.L Late',
       hours: '13:00 – Close',
       copy: 'Panini Fusion. Hot and pressed.\nCroissants, pasta, wraps.\nStill hot at 2am.',
       tag: 'Still hot at 2am.',
@@ -43,7 +43,7 @@ const en = {
   },
   menu: {
     tabs: {
-      health: 'Health DEAL',
+      health: 'Health D.E.A.L',
       food: 'Food',
       drinks: 'Drinks',
     },
@@ -68,7 +68,7 @@ const en = {
     },
     address: '28/52 Tô Ngọc Vân, Tây Hồ, Hà Nội 10000',
     email: 'realty.hub@demonopol.com',
-    mapAlt: 'DEAL Realty Hub Coffee – 28/52 Tô Ngọc Vân, Tây Hồ',
+    mapAlt: 'D.E.A.L Realty Hub Coffee – 28/52 Tô Ngọc Vân, Tây Hồ',
     openNow: 'Open Now',
     closed: 'Closed',
   },
@@ -86,13 +86,15 @@ const en = {
       instagram: 'Instagram',
       facebook: 'Facebook',
     },
-    recruitmentVn: 'DEAL – Realty Hub Coffee là quán cà phê tại Tây Hồ, Hà Nội. Mở từ 7 giờ sáng đến 2 giờ đêm các ngày thường, đến 5 giờ sáng cuối tuần. Thực đơn lành mạnh buổi sáng, ẩm thực fusion buổi tối.',
+    recruitmentVn: 'D.E.A.L – Realty Hub Coffee là quán cà phê tại Tây Hồ, Hà Nội. Mở từ 7 giờ sáng đến 2 giờ đêm các ngày thường, đến 5 giờ sáng cuối tuần. Thực đơn lành mạnh buổi sáng, ẩm thực fusion buổi tối.',
   },
   footer: {
     location: '28/52 Tô Ngọc Vân · Tây Hồ · Hà Nội',
     slogan: 'A good deal starts with a good meal.',
     hoursShort: 'Mon–Sun 07–02 · Fri–Sat 07–05',
-    copy: '© 2026 DEAL · realty.hub@demonopol.com',
+    copy: '© 2026 D.E.A.L · realty.hub@demonopol.com',
+    brandKit: 'Brand kit ↓',
+    brandKitTitle: 'Download logos, wordmarks & social images (ZIP, ~380 KB)',
   },
 };
 

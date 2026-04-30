@@ -47,7 +47,7 @@ export function RealtyHub() {
               className="font-mono text-offwhite/70"
               style={{ fontSize: '13px', lineHeight: 1.8, fontWeight: 300 }}
             >
-              DEAL is the first physical location of{' '}
+              D.E.A.L is the first physical location of{' '}
               <a
                 href="http://demonopol.com"
                 target="_blank"

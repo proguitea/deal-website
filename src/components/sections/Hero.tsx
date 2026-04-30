@@ -17,8 +17,8 @@ function getVietnamTime() {
 }
 
 const modeLabel: Record<TimeMode, { text: string; color: string; pulse: boolean }> = {
-  health: { text: 'HEALTH DEAL', color: '#4F9E6E', pulse: false },
-  deal:   { text: 'DEAL',        color: '#C9A96E', pulse: false },
+  health: { text: 'HEALTH D.E.A.L', color: '#4F9E6E', pulse: false },
+  deal:   { text: 'D.E.A.L',        color: '#C9A96E', pulse: false },
   late:   { text: 'LATE NIGHT',  color: '#D44332', pulse: true  },
   closed: { text: 'OPENS 07:00', color: 'rgba(240,237,232,0.30)', pulse: false },
 };
@@ -95,7 +95,7 @@ function VietnamClock({ mode }: { mode: TimeMode }) {
   );
 }
 
-const LETTERS = ['D', 'E', 'A', 'L'];
+const LETTERS = ['D', '.', 'E', '.', 'A', '.', 'L'];
 
 export function Hero({ t }: Props) {
   const mode = useTimeMode();
@@ -170,14 +170,14 @@ export function Hero({ t }: Props) {
             Est. MMXXVI &nbsp;·&nbsp; Tây Hồ &nbsp;·&nbsp; Hà Nội
           </motion.p>
 
-          {/* DEAL — letter by letter */}
+          {/* D.E.A.L — letter by letter (periods animate as separators) */}
           <div
             className="font-display font-black text-brass flex"
-            style={{ fontSize: 'clamp(4rem, 11vw, 9rem)', letterSpacing: '0.25em', lineHeight: 1 }}
+            style={{ fontSize: 'clamp(3.5rem, 9.5vw, 8rem)', letterSpacing: '0.12em', lineHeight: 1 }}
           >
             {LETTERS.map((letter, i) => (
               <motion.span
-                key={letter}
+                key={i}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 + i * 0.09, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}

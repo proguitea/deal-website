@@ -95,6 +95,8 @@ const vi: Translations = {
     slogan: 'Một deal tốt bắt đầu từ một bữa ăn ngon.',
     hoursShort: 'T2–CN 07–02 · T6–T7 07–05',
     copy: '© 2026 D.E.A.L · realty.hub@demonopol.com',
+    brandKit: 'Brand kit ↓',
+    brandKitTitle: 'Tải logo, wordmark & ảnh mạng xã hội (ZIP, ~380 KB)',
   },
 };
 

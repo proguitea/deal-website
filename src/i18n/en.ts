@@ -93,6 +93,8 @@ const en = {
     slogan: 'A good deal starts with a good meal.',
     hoursShort: 'Mon–Sun 07–02 · Fri–Sat 07–05',
     copy: '© 2026 D.E.A.L · realty.hub@demonopol.com',
+    brandKit: 'Brand kit ↓',
+    brandKitTitle: 'Download logos, wordmarks & social images (ZIP, ~380 KB)',
   },
 };
 

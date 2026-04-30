@@ -12,17 +12,21 @@
 //
 // Outputs into brand/png/ — drop into Canva, Instagram, presentations, etc.
 
-import { readFile, mkdir, stat } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
+import { readFile, mkdir, stat, readdir } from 'node:fs/promises';
+import { createWriteStream } from 'node:fs';
+import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 import opentype from 'opentype.js';
+import archiver from 'archiver';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const brandDir = join(root, 'brand');
 const fontsDir = join(brandDir, '.fonts');
 const outDir = join(brandDir, 'png');
+const publicDir = join(root, 'public');
+const zipPath = join(publicDir, 'brand-kit.zip');
 
 const renders = [
   // D-mark (square 1:1) — no text, font conversion is a no-op
@@ -128,6 +132,26 @@ async function renderOne(entry, fonts) {
   }
 }
 
+// Bundle brand/ contents (excluding .fonts which are build-time only) into
+// a single ZIP at public/brand-kit.zip — exposed at runtime as /brand-kit.zip
+// for the footer download link.
+async function buildZip() {
+  await mkdir(publicDir, { recursive: true });
+  return new Promise((resolve, reject) => {
+    const output = createWriteStream(zipPath);
+    const archive = archiver('zip', { zlib: { level: 9 } });
+    output.on('close', () => resolve(archive.pointer()));
+    archive.on('warning', (err) => { if (err.code !== 'ENOENT') reject(err); });
+    archive.on('error', reject);
+    archive.pipe(output);
+    // Add SVG masters + README (top level of ZIP)
+    archive.glob('*.{svg,md}', { cwd: brandDir });
+    // Add PNG renders under png/
+    archive.glob('png/*.png', { cwd: brandDir });
+    archive.finalize();
+  });
+}
+
 async function main() {
   await ensureOutDir();
   console.log(`Rendering brand PNGs → ${outDir}`);
@@ -138,6 +162,9 @@ async function main() {
     await renderOne(entry, fonts);
     console.log('');
   }
+  console.log(`Bundling brand-kit.zip → ${relative(root, zipPath)}`);
+  const bytes = await buildZip();
+  console.log(`  ${(bytes / 1024).toFixed(1)} KB\n`);
   console.log('Done.');
 }
 

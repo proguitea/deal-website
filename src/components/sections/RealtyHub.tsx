@@ -23,9 +23,16 @@ export function RealtyHub() {
           {/* Left column — 60% */}
           <div className="flex flex-col gap-5 w-full md:w-[60%]">
             <span
-              className="font-display text-jade"
+              className="font-display text-jade flex items-center gap-2"
               style={{ fontSize: '7px', letterSpacing: '5px', opacity: 0.7 }}
             >
+              {/* Live pulse — subtle red accent signalling on-chain activity */}
+              <motion.span
+                aria-hidden="true"
+                className="inline-block w-1 h-1 rounded-full bg-red"
+                animate={{ opacity: [0.3, 1, 0.3] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+              />
               REALTY HUB
             </span>
 

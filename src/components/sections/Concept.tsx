@@ -117,9 +117,16 @@ export function Concept({ t }: Props) {
             viewport={{ once: true, margin: '-60px' }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
             transition={{ delay: 0.1 }}
-            className="p-8 border border-brass/15 bg-brass/5 cursor-default md:min-h-[220px]"
+            className="relative p-8 border border-brass/15 bg-brass/5 cursor-default md:min-h-[220px]"
             style={{ borderRadius: '2px' }}
           >
+            {/* Subtle late-night pulse — red accent */}
+            <motion.span
+              aria-hidden="true"
+              className="absolute top-4 right-4 inline-block w-1.5 h-1.5 rounded-full bg-red"
+              animate={{ opacity: [0.35, 1, 0.35] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+            />
             <div className="mb-4">
               <MoonIcon />
             </div>

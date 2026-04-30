@@ -55,15 +55,21 @@ export function Hours({ t, theme }: Props) {
               That's rarely before 2am.
             </p>
 
-            {/* Live indicator */}
+            {/* Live indicator — red during late-night hours */}
             <div className="flex items-center gap-2 mb-6">
               <span
                 className={`inline-block w-2 h-2 rounded-full ${
-                  isOpen ? 'bg-jade animate-pulse' : 'bg-white/20'
+                  mode === 'late'
+                    ? 'bg-red animate-pulse'
+                    : isOpen
+                    ? 'bg-jade animate-pulse'
+                    : 'bg-white/20'
                 }`}
               />
               <span
-                className={`font-mono font-semibold ${isOpen ? 'text-jade' : textMuted}`}
+                className={`font-mono font-semibold ${
+                  mode === 'late' ? 'text-red' : isOpen ? 'text-jade' : textMuted
+                }`}
                 style={{ fontSize: '12px' }}
               >
                 {isOpen ? t.hours.openNow : t.hours.closed}

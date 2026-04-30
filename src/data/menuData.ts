@@ -5,7 +5,7 @@ export interface MenuItem {
   description: string;
   price: string;
   flag: string;
-  tag?: 'HERO' | 'HIGH PRO' | 'BAKED' | 'SIMPLE' | '25g PRO';
+  tag?: 'HERO' | 'HIGH PRO' | 'BAKED' | 'SIMPLE' | '25g PRO' | 'SPICY';
   macro?: { p: number; c: number; f: number };
   image?: string;
 }
@@ -265,6 +265,7 @@ const menuData: MenuSection[] = [
             description: 'Marinated tofu, pickled carrot & daikon, jalapeño, herbs',
             price: '120.000',
             flag: '🇻🇳',
+            tag: 'SPICY',
           },
         ],
       },
@@ -559,6 +560,7 @@ const menuData: MenuSection[] = [
             description: 'Spaghetti, garlic, chili, parsley, extra virgin olive oil',
             price: '125.000',
             flag: '🇮🇹',
+            tag: 'SPICY',
           },
           {
             id: 'salmon-cream-pasta',

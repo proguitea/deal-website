@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- D.E.A.L Realty Hub Coffee — D-mark on dark surface -->
+  <!-- Brand colors: brass #C9A96E · jade #4F9E6E · red #D44332 · anth-dark #1E2022 -->
+
+  <rect width="100" height="100" rx="16" fill="#1E2022"/>
+
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M18 14 L18 86 L48 86 Q82 86 82 50 Q82 14 48 14 Z
+       M32 26 L48 26 Q70 26 70 50 Q70 74 48 74 L32 74 Z"
+    fill="#C9A96E"/>
+
+  <!-- Tri-band accent — jade framed by red strokes -->
+  <rect x="32" y="44.5" width="38" height="1.5" rx="1" fill="#D44332"/>
+  <rect x="32" y="46"   width="38" height="8"   rx="1" fill="#4F9E6E"/>
+  <rect x="32" y="54"   width="38" height="1.5" rx="1" fill="#D44332"/>
+</svg>

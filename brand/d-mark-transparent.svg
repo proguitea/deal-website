@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- D.E.A.L Realty Hub Coffee — D-mark, transparent background -->
+  <!-- Use this when placing on photos, custom backgrounds, or for stickers/print -->
+
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M18 14 L18 86 L48 86 Q82 86 82 50 Q82 14 48 14 Z
+       M32 26 L48 26 Q70 26 70 50 Q70 74 48 74 L32 74 Z"
+    fill="#C9A96E"/>
+
+  <rect x="32" y="44.5" width="38" height="1.5" rx="1" fill="#D44332"/>
+  <rect x="32" y="46"   width="38" height="8"   rx="1" fill="#4F9E6E"/>
+  <rect x="32" y="54"   width="38" height="1.5" rx="1" fill="#D44332"/>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- D.E.A.L Realty Hub Coffee — Open Graph / link preview card (1200x630) -->
+  <!-- Used for Facebook, LinkedIn, WhatsApp, Slack, Twitter link cards -->
+
+  <rect width="1200" height="630" fill="#1E2022"/>
+
+  <!-- Subtle dot grid pattern -->
+  <defs>
+    <pattern id="dot-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#C9A96E" opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dot-grid)"/>
+
+  <!-- Brass radial glow on left -->
+  <defs>
+    <radialGradient id="brass-glow" cx="20%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#brass-glow)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="170"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="6"
+    fill="#C9A96E"
+    opacity="0.5">EST. MMXXVI · TÂY HỒ · HÀ NỘI</text>
+
+  <!-- Giant D.E.A.L wordmark — sized to leave room for D-mark on right -->
+  <text x="80" y="320"
+    font-family="'Orbitron', 'Courier New', monospace"
+    font-weight="900"
+    font-size="120"
+    letter-spacing="14"
+    fill="#C9A96E">D.E.A.L</text>
+
+  <!-- Thin rule -->
+  <rect x="80" y="345" width="280" height="1" fill="#C9A96E" opacity="0.4"/>
+
+  <!-- REALTY HUB COFFEE -->
+  <text x="80" y="378"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="9"
+    fill="#4F9E6E">REALTY HUB COFFEE</text>
+
+  <!-- Slogan -->
+  <text x="80" y="465"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="22"
+    fill="#F0EDE8"
+    opacity="0.75">Fuel the morning.</text>
+  <text x="80" y="500"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="22"
+    fill="#F0EDE8">Own the night.</text>
+
+  <!-- Hours hint -->
+  <text x="80" y="560"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="11"
+    letter-spacing="2"
+    fill="#C9A96E"
+    opacity="0.55">OPEN 07:00 — 02:00 · FRI–SAT UNTIL 05:00</text>
+
+  <!-- D-mark on right side, sized to clear the wordmark -->
+  <g transform="translate(890, 195)">
+    <rect width="240" height="240" rx="32" fill="#1E2022" stroke="#C9A96E" stroke-width="0.5" stroke-opacity="0.3"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M43.2 33.6 L43.2 206.4 L115.2 206.4 Q196.8 206.4 196.8 120 Q196.8 33.6 115.2 33.6 Z
+         M76.8 62.4 L115.2 62.4 Q168 62.4 168 120 Q168 177.6 115.2 177.6 L76.8 177.6 Z"
+      fill="#C9A96E"/>
+    <rect x="76.8" y="106.8" width="91.2" height="3.6" rx="2.4" fill="#D44332"/>
+    <rect x="76.8" y="110.4" width="91.2" height="19.2" rx="2.4" fill="#4F9E6E"/>
+    <rect x="76.8" y="129.6" width="91.2" height="3.6" rx="2.4" fill="#D44332"/>
+  </g>
+</svg>

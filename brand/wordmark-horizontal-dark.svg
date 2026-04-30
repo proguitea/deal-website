@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80">
+  <!-- D.E.A.L Realty Hub Coffee — full horizontal wordmark on dark surface -->
+  <!-- Brand colors: brass #C9A96E · jade #4F9E6E · red #D44332 · anth-dark #1E2022 -->
+
+  <rect width="360" height="80" fill="#1E2022"/>
+
+  <!-- D Mark icon -->
+  <rect x="0" y="4" width="72" height="72" rx="10" fill="#1E2022"/>
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M13 18 L13 62 L34 62 Q59 62 59 40 Q59 18 34 18 Z
+       M23 27 L34 27 Q50 27 50 40 Q50 53 34 53 L23 53 Z"
+    fill="#C9A96E"/>
+  <rect x="23" y="34.5" width="27" height="1.5" rx="1" fill="#D44332"/>
+  <rect x="23" y="36"   width="27" height="8"   rx="1" fill="#4F9E6E"/>
+  <rect x="23" y="44"   width="27" height="1.5" rx="1" fill="#D44332"/>
+
+  <!-- Thin vertical separator -->
+  <rect x="88" y="20" width="1" height="40" fill="#C9A96E" opacity="0.25"/>
+
+  <!-- D.E.A.L wordmark -->
+  <text x="100" y="52"
+    font-family="'Orbitron', 'Courier New', monospace"
+    font-weight="900"
+    font-size="38"
+    letter-spacing="6"
+    fill="#C9A96E">D.E.A.L</text>
+
+  <!-- REALTY HUB COFFEE subtitle -->
+  <text x="102" y="67"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="9"
+    letter-spacing="4"
+    fill="#4F9E6E"
+    opacity="0.8">REALTY HUB COFFEE</text>
+</svg>

@@ -16,7 +16,7 @@ export default {
         jade: '#4F9E6E',
         brass: '#C9A96E',
         'brass-dark': '#A8854A',
-        red: '#C0392B',
+        red: '#D44332',
         offwhite: '#F0EDE8',
         cream: '#F7F4EF',
         'cream-dark': '#EDE9E2',

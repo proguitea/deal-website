@@ -19,7 +19,7 @@ function getVietnamTime() {
 const modeLabel: Record<TimeMode, { text: string; color: string; pulse: boolean }> = {
   health: { text: 'HEALTH DEAL', color: '#4F9E6E', pulse: false },
   deal:   { text: 'DEAL',        color: '#C9A96E', pulse: false },
-  late:   { text: 'LATE NIGHT',  color: '#C0392B', pulse: true  },
+  late:   { text: 'LATE NIGHT',  color: '#D44332', pulse: true  },
   closed: { text: 'OPENS 07:00', color: 'rgba(240,237,232,0.30)', pulse: false },
 };
 
@@ -137,14 +137,17 @@ export function Hero({ t }: Props) {
         aria-hidden="true"
       />
 
-      {/* Pulsing ambient glow */}
+      {/* Pulsing ambient glow — brass by default, red during late-night mode */}
       <motion.div
         className="absolute pointer-events-none"
         style={{
           left: '8%', top: '50%',
           width: 600, height: 600,
           borderRadius: '50%',
-          background: 'radial-gradient(ellipse at center, rgba(201,169,110,0.10) 0%, transparent 65%)',
+          background:
+            mode === 'late'
+              ? 'radial-gradient(ellipse at center, rgba(212,67,50,0.12) 0%, transparent 65%)'
+              : 'radial-gradient(ellipse at center, rgba(201,169,110,0.10) 0%, transparent 65%)',
           transform: 'translateY(-50%)',
         }}
         animate={{ opacity: [0.6, 1, 0.6] }}

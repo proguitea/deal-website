@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- D.E.A.L hero composition — landscape (16:9) -->
+  <!-- For: website hero exports, Twitter/X header, FB cover, presentations -->
+
+  <rect width="1920" height="1080" fill="#1E2022"/>
+
+  <!-- Subtle dot grid texture -->
+  <defs>
+    <pattern id="dot-grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="24" cy="24" r="1.2" fill="#C9A96E" opacity="0.07"/>
+    </pattern>
+    <radialGradient id="brass-glow" cx="22%" cy="55%" r="42%">
+      <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#dot-grid)"/>
+  <rect width="1920" height="1080" fill="url(#brass-glow)"/>
+
+  <!-- Eyebrow -->
+  <text x="120" y="180"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="16"
+    letter-spacing="8"
+    fill="#C9A96E"
+    opacity="0.45">EST. MMXXVI  ·  TÂY HỒ  ·  HÀ NỘI</text>
+
+  <!-- Giant D.E.A.L wordmark -->
+  <text x="120" y="430"
+    font-family="'Orbitron', monospace"
+    font-weight="900"
+    font-size="220"
+    letter-spacing="28"
+    fill="#C9A96E">D.E.A.L</text>
+
+  <!-- Thin draw rule -->
+  <rect x="120" y="465" width="500" height="1.5" fill="#C9A96E" opacity="0.45"/>
+
+  <!-- REALTY HUB COFFEE subtitle -->
+  <text x="120" y="510"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="16"
+    letter-spacing="11"
+    fill="#4F9E6E">REALTY HUB COFFEE</text>
+
+  <!-- Slogan — line 1 (dim, smaller, like the live site) -->
+  <text x="120" y="640"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="300"
+    font-size="22"
+    fill="#F0EDE8"
+    opacity="0.55">A good deal starts with a good meal.</text>
+
+  <!-- Slogan — lines 2 & 3 (full weight) -->
+  <text x="120" y="700"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="34"
+    fill="#F0EDE8">Fuel the morning.</text>
+
+  <text x="120" y="755"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="34"
+    fill="#F0EDE8">Own the night.</text>
+
+  <!-- Subtext -->
+  <text x="120" y="900"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="20"
+    fill="#F0EDE8"
+    opacity="0.45">Tay Ho's kitchen that doesn't close.</text>
+
+  <text x="120" y="935"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="20"
+    fill="#F0EDE8"
+    opacity="0.45">Health food in the morning. Panini at midnight.</text>
+
+  <!-- Hours hint at bottom -->
+  <text x="120" y="1010"
+    font-family="'IBM Plex Mono', monospace"
+    font-weight="400"
+    font-size="13"
+    letter-spacing="3"
+    fill="#C9A96E"
+    opacity="0.40">OPEN 07:00 — 02:00  ·  FRI–SAT UNTIL 05:00</text>
+</svg>

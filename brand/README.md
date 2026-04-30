@@ -14,6 +14,9 @@ Logo files for marketing, social media, presentations, and designer hand-off.
 | App icon / large mark | `png/d-mark-dark-1024.png` |
 | Sticker, T-shirt, custom background | `png/d-mark-transparent-2048.png` (alpha channel) |
 | Link preview (Slack, WhatsApp, FB, LinkedIn) | `png/og-image-1200x630-1200.png` |
+| Twitter/X header, FB cover, presentation slide | `png/hero-landscape-1920x1080-1920.png` |
+| Instagram feed post (full hero composition) | `png/hero-square-1080x1080-1080.png` (or `-2160` for retina) |
+| Instagram Story, TikTok cover, phone wallpaper | `png/hero-story-1080x1920-1080.png` |
 
 ## Brand colors
 
@@ -37,6 +40,9 @@ Logo files for marketing, social media, presentations, and designer hand-off.
 - `wordmark-horizontal-light.svg` — full horizontal logo on light
 - `wordmark-stacked-dark.svg` — D-mark above text (square layout for IG profile, etc.)
 - `og-image-1200x630.svg` — link preview card
+- `hero-landscape-1920x1080.svg` — full hero composition, 16:9 landscape
+- `hero-square-1080x1080.svg` — hero composition cropped to square (1:1)
+- `hero-story-1080x1920.svg` — hero composition for Instagram Story / TikTok cover (9:16)
 
 ### Raster (PNG)
 
@@ -46,6 +52,9 @@ In `png/`. Generated from the SVGs at standard sizes.
 - Horizontal wordmark: 720, 1440, 2880 px
 - Stacked wordmark: 480, 1080, 2160 px
 - OG image: 1200 px (native size)
+- Hero landscape: 1920 px (native, 16:9)
+- Hero square: 1080 + 2160 px (1:1 — IG retina)
+- Hero story: 1080 px (native, 9:16)
 
 ## Re-generating PNGs
 

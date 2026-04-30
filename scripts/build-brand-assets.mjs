@@ -43,6 +43,11 @@ const renders = [
 
   // OG image (1.91:1) — link previews. Render only at native resolution.
   { svg: 'og-image-1200x630.svg', sizes: [1200] },
+
+  // Hero compositions — for marketing posts, headers, stories
+  { svg: 'hero-landscape-1920x1080.svg', sizes: [1920] },        // 16:9
+  { svg: 'hero-square-1080x1080.svg',    sizes: [1080, 2160] },  // IG feed (1080) + retina (2160)
+  { svg: 'hero-story-1080x1920.svg',     sizes: [1080] },        // 9:16 IG story / TikTok cover
 ];
 
 // Decide which font to use for a given font-family attribute string.
@@ -52,6 +57,26 @@ function resolveFont(fontFamily, fonts) {
   if (lower.includes('plex')) return fonts.plexMono;
   if (lower.includes('mono') && !lower.includes('orbitron')) return fonts.plexMono;
   return fonts.orbitron;
+}
+
+// If a char isn't in the font, try smart fallbacks before stripping all
+// diacritics: e.g. Ồ → Ô (keep circumflex, drop grave) before Ồ → O.
+// This keeps Vietnamese legibility maximal even on a Latin-subset font.
+function transliterateForFont(text, font) {
+  const ok = (g) => g && g.name !== '.notdef' && g.index !== 0;
+  let out = '';
+  for (const ch of text) {
+    if (ok(font.charToGlyph(ch))) { out += ch; continue; }
+    const decomp = ch.normalize('NFD');
+    if (decomp.length > 1) {
+      // Try base + first combining mark recomposed (e.g. Ồ → Ô)
+      const partial = (decomp[0] + decomp[1]).normalize('NFC');
+      if (ok(font.charToGlyph(partial))) { out += partial; continue; }
+    }
+    // Last resort: just the base letter
+    out += decomp[0] || ch;
+  }
+  return out;
 }
 
 // Strip outer quotes from XML attribute values returned by the regex.
@@ -76,9 +101,14 @@ function convertTextToPaths(svgString, fonts) {
 
     const font = resolveFont(fontFamily, fonts);
 
+    // Pre-transliterate so Vietnamese precomposed chars fall back gracefully.
+    const safeText = transliterateForFont(text, font);
+
+    // Build a glyph list per char (reliably handles spaces, punctuation, etc.).
+    const glyphs = Array.from(safeText).map((ch) => font.charToGlyph(ch));
+
     // Compute total advance with letter-spacing applied between glyphs.
     let totalWidth = 0;
-    const glyphs = font.stringToGlyphs(text);
     glyphs.forEach((g, i) => {
       totalWidth += (g.advanceWidth / font.unitsPerEm) * fontSize;
       if (i < glyphs.length - 1) totalWidth += letterSpacing;
@@ -88,7 +118,7 @@ function convertTextToPaths(svgString, fonts) {
     if (textAnchor === 'middle') xOffset = -totalWidth / 2;
     else if (textAnchor === 'end') xOffset = -totalWidth;
 
-    // Build per-glyph paths positioned with explicit transforms.
+    // Per-glyph paths — reliable for both monospace metrics and special chars.
     let cursor = x + xOffset;
     const paths = glyphs.map((glyph) => {
       const path = glyph.getPath(cursor, y, fontSize);
